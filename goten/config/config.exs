@@ -15,7 +15,8 @@ config :goten, GotenWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "coNlPp/pud3u2Mt706zGBJFjhd7oaNswu80C+EwLnbky/UJRPr3gj0EdTgR/2fFK",
   render_errors: [view: GotenWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Goten.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Goten.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "cVUrun4zjPSNCulSsZGSljVjyXIierFP"]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -40,6 +40,8 @@ defmodule Goten.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+      {:floki, ">= 0.0.0", only: :test},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"}
