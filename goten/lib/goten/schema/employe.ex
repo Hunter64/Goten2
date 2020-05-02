@@ -1,4 +1,4 @@
-defmodule Goten.Employes.Employe do
+defmodule Goten.EmployeSchema do
   use Ecto.Schema
   import Ecto.Changeset
 

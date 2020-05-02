@@ -6,7 +6,7 @@ defmodule Goten.Employes do
   import Ecto.Query, warn: false
   alias Goten.Repo
 
-  alias Goten.Employes.Employe
+  alias Goten.EmployeSchema
 
   @doc """
   Returns the list of employes.
@@ -14,11 +14,11 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> list_employes()
-      [%Employe{}, ...]
+      [%EmployeSchema{}, ...]
 
   """
   def list_employes do
-    Repo.all(Employe)
+    Repo.all(EmployeSchema)
   end
 
   @doc """
@@ -29,13 +29,13 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> get_employe!(123)
-      %Employe{}
+      %EmployeSchema{}
 
       iex> get_employe!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_employe!(id), do: Repo.get!(Employe, id)
+  def get_employe!(id), do: Repo.get!(EmployeSchema, id)
 
   @doc """
   Creates a employe.
@@ -43,15 +43,15 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> create_employe(%{field: value})
-      {:ok, %Employe{}}
+      {:ok, %EmployeSchema{}}
 
       iex> create_employe(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
   def create_employe(attrs \\ %{}) do
-    %Employe{}
-    |> Employe.changeset(attrs)
+    %EmployeSchema{}
+    |> EmployeSchema.changeset(attrs)
     |> Repo.insert()
   end
 
@@ -61,15 +61,15 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> update_employe(employe, %{field: new_value})
-      {:ok, %Employe{}}
+      {:ok, %EmployeSchema{}}
 
       iex> update_employe(employe, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_employe(%Employe{} = employe, attrs) do
+  def update_employe(%EmployeSchema{} = employe, attrs) do
     employe
-    |> Employe.changeset(attrs)
+    |> EmployeSchema.changeset(attrs)
     |> Repo.update()
   end
 
@@ -79,13 +79,13 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> delete_employe(employe)
-      {:ok, %Employe{}}
+      {:ok, %EmployeSchema{}}
 
       iex> delete_employe(employe)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_employe(%Employe{} = employe) do
+  def delete_employe(%EmployeSchema{} = employe) do
     Repo.delete(employe)
   end
 
@@ -95,10 +95,10 @@ defmodule Goten.Employes do
   ## Examples
 
       iex> change_employe(employe)
-      %Ecto.Changeset{source: %Employe{}}
+      %Ecto.Changeset{source: %EmployeSchema{}}
 
   """
-  def change_employe(%Employe{} = employe) do
-    Employe.changeset(employe, %{})
+  def change_employe(%EmployeSchema{} = employe) do
+    EmployeSchema.changeset(employe, %{})
   end
 end
