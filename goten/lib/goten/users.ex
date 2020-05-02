@@ -1,12 +1,12 @@
-defmodule Goten.Accounts do
+defmodule Goten.Users do
   @moduledoc """
-  The Accounts context.
+  The Users context.
   """
 
   import Ecto.Query, warn: false
   alias Goten.Repo
 
-  alias Goten.Accounts.User
+  alias Goten.UserSchema
 
   @doc """
   Returns the list of users.
@@ -14,11 +14,11 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> list_users()
-      [%User{}, ...]
+      [%UserSchema{}, ...]
 
   """
   def list_users do
-    Repo.all(User)
+    Repo.all(UserSchema)
   end
 
   @doc """
@@ -29,13 +29,13 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> get_user!(123)
-      %User{}
+      %UserSchema{}
 
       iex> get_user!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id), do: Repo.get!(UserSchema, id)
 
   @doc """
   Creates a user.
@@ -43,15 +43,15 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> create_user(%{field: value})
-      {:ok, %User{}}
+      {:ok, %UserSchema{}}
 
       iex> create_user(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
   def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
+    %UserSchema{}
+    |> UserSchema.changeset(attrs)
     |> Repo.insert()
   end
 
@@ -61,15 +61,15 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> update_user(user, %{field: new_value})
-      {:ok, %User{}}
+      {:ok, %UserSchema{}}
 
       iex> update_user(user, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_user(%User{} = user, attrs) do
+  def update_user(%UserSchema{} = user, attrs) do
     user
-    |> User.changeset(attrs)
+    |> UserSchema.changeset(attrs)
     |> Repo.update()
   end
 
@@ -79,13 +79,13 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> delete_user(user)
-      {:ok, %User{}}
+      {:ok, %UserSchema{}}
 
       iex> delete_user(user)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_user(%User{} = user) do
+  def delete_user(%UserSchema{} = user) do
     Repo.delete(user)
   end
 
@@ -95,10 +95,10 @@ defmodule Goten.Accounts do
   ## Examples
 
       iex> change_user(user)
-      %Ecto.Changeset{source: %User{}}
+      %Ecto.Changeset{source: %UserSchema{}}
 
   """
-  def change_user(%User{} = user) do
-    User.changeset(user, %{})
+  def change_user(%UserSchema{} = user) do
+    UserSchema.changeset(user, %{})
   end
 end
