@@ -1,0 +1,34 @@
+defmodule GotenWeb.HeaderComponent do
+  use Phoenix.LiveComponent
+  use Phoenix.HTML
+
+  #alias Goten.Accounts, as: Headers
+
+  def mount(socket) do
+    {:ok, socket}
+  end
+
+  # def update(attrs, socket) do
+  #   {:ok, socket}
+  # end
+
+  def render(assigns) do
+    ~L"""
+    <div class="fixed w-full py-2 bg-blue-900 top-0 left-0 z-10">
+      <div class="flex">
+        <img src="https://1.bp.blogspot.com/-IWXJBhok5RI/U2lE0sGou3I/AAAAAAAAAC4/3KiYtmnws_0/w1200-h630-p-k-no-nu/GOTEN.png" class="w-56 ml-6 h-20 w-24">
+
+        <div class="ml-auto block text-right">
+          <p class="font-bold text-lg text-white ">Hunter</p>
+          <p class="text-medium text-white ">Administrador</p>
+        </div>
+        <div class="inline-flex items-center ml-4 mr-6">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-372-456324.png" class="rounded-full w-12 h-12 -mt-5">
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+
+end
