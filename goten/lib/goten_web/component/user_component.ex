@@ -14,7 +14,7 @@ defmodule GotenWeb.UserComponent do
 
   def render(assigns) do
     ~L"""
-    <div>
+    <div class="mt-24">
       USERS HERE
     <div>
     """
