@@ -16,7 +16,7 @@ defmodule GotenWeb.Router do
   scope "/", GotenWeb do
     pipe_through :browser
 
-    #get "/", PageController, :index
+    get "/", PageController, :index
     get "/users", UserController, :index
     get "/form_employe", FormEmployeController, :index
   end
