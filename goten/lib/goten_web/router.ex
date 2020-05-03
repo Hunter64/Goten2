@@ -19,7 +19,6 @@ defmodule GotenWeb.Router do
     get "/", PageController, :index
     get "/users", UserController, :index
     get "/employes", EmployesController, :index
-    get "/form_employe", FormEmployeController, :index
   end
 
   # Other scopes may use custom stacks.
